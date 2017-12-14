@@ -1,0 +1,10 @@
+---
+route:
+  default:
+    command: dev
+service:
+  preset: Schmalcon\Di\Preset\Cli
+  dir:
+    - common
+    - cli
+...

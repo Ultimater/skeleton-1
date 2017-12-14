@@ -1,0 +1,35 @@
+phalcon-autoapp:8080 {
+  tls off
+
+  root ./env/dev/public
+
+  log stdout
+  errors stderr
+
+  fastcgi / 127.0.0.1:9000 php
+
+  # Webpack processed resources
+  rewrite {
+    if_op or
+    if {path} starts_with /js/
+    if {path} starts_with /css/
+    if {path} starts_with /fonts/
+    if {path} starts_with /assets/
+    if {path} starts_with /webpack-dev-server
+    to /webpack-proxy{uri}
+  }
+  proxy /webpack-proxy localhost:8081 {
+    transparent
+    without /webpack-proxy
+  }
+
+  rewrite {
+    if_op and
+    if {path} not_starts_with /js/
+    if {path} not_starts_with /css/
+    if {path} not_starts_with /fonts/
+    if {path} not_starts_with /assets/
+    if {path} not_starts_with /webpack-dev-server
+    to /index.php?_url={path}
+  }
+}

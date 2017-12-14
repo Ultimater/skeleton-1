@@ -1,0 +1,15 @@
+---
+module:
+  - main
+route:
+  singleModule: true
+  default:
+    module: main
+service:
+  preset: Schmalcon\Di\Preset\Web
+  provider:
+    - WebServiceProvider
+  dir:
+    - common
+    - web
+...

@@ -1,0 +1,7 @@
+---
+namespace: App
+path:
+  appDir: app
+  packageDir: lib
+  tmpDir: tmp
+...
