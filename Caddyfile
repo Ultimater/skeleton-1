@@ -1,4 +1,4 @@
-phalcon-autoapp:8080 {
+perch-app:8080 {
   tls off
 
   root ./env/dev/public

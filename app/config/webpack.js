@@ -11,7 +11,7 @@ module.exports = {
     './entries/start',
   ],
   output: {
-    path         : '/tmp/phalcon-autoapp',
+    path         : '/tmp/perch-app',
     publicPath   : '/',
     filename     : 'js/[name].js',
     chunkFilename: 'js/chunk/[id].js',

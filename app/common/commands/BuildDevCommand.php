@@ -1,7 +1,7 @@
 <?php
 namespace App\Commands;
 
-use Schmalcon\Command;
+use Perch\Command;
 
 /**
  *

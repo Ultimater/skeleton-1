@@ -1,6 +1,6 @@
 <?php
 use Phalcon\Di\Service\SharedService;
-use Schmalcon\Command\Router;
+use Perch\Command\Router;
 
 return new SharedService(function() {
     $config = $this->getConfig();

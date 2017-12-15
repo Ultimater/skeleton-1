@@ -6,7 +6,7 @@ route:
   default:
     module: main
 service:
-  preset: Schmalcon\Di\Preset\Web
+  preset: Perch\Di\Preset\Web
   provider:
     - WebServiceProvider
   dir:

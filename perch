@@ -30,9 +30,9 @@ function createCliScriptAsNameEntry($path) {
     $entryText = <<<'EOF'
 #!/usr/bin/env php
 <?php
-use Schmalcon\Application\AutoApp;
+use Perch\Application\AutoApp;
 
-require __DIR__ . '/../../../schmalcon/require.php';
+require __DIR__ . '/../../../feather-extension/require.php';
 
 $app = new AutoApp(__DIR__ . '/../../..');
 $app->run([
@@ -50,9 +50,9 @@ EOF;
 function createWebEntry($path) {
     $entryText = <<<'EOF'
 <?php
-use Schmalcon\Application\AutoApp;
+use Perch\Application\AutoApp;
 
-require __DIR__ . '/../../../schmalcon/require.php';
+require __DIR__ . '/../../../feather-extension/require.php';
 $app = new AutoApp(__DIR__ . '/../../..');
 $app->run();
 EOF;
@@ -67,9 +67,9 @@ function createCliEntry($path) {
     $entryText = <<<'EOF'
 #!/usr/bin/env php
 <?php
-use Schmalcon\Application\AutoApp;
+use Perch\Application\AutoApp;
 
-require __DIR__ . '/../../../schmalcon/require.php';
+require __DIR__ . '/../../feather-extension/require.php';
 
 $app = new AutoApp(__DIR__ . '/../..');
 $app->run();

@@ -1,5 +1,5 @@
 <?php
-use Schmalcon\Mvc\Router;
+use Perch\Mvc\Router;
 
 return function() {
     $config = $this->getConfig();

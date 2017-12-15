@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'className' => 'Schmalcon\CLI\StandardArgvParser',
+    'className' => 'Perch\CLI\StandardArgvParser',
     'shared' => true,
 ];

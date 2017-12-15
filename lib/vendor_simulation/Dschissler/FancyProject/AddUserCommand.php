@@ -1,9 +1,9 @@
 <?php
 namespace Dschissler\FancyProject;
 
-use Schmalcon\Command;
-use Schmalcon\Command\ArgParser\Standard as ArgParser;
-use Schmalcon\Command\HelpPrinter\Standard as HelpPrinter;
+use Perch\Command;
+use Perch\Command\ArgParser\Standard as ArgParser;
+use Perch\Command\HelpPrinter\Standard as HelpPrinter;
 
 /**
  *

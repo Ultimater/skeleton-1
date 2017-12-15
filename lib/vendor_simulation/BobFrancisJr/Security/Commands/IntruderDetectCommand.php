@@ -1,7 +1,7 @@
 <?php
 namespace BobFrancisJr\Security\Commands;
 
-use Schmalcon\Command;
+use Perch\Command;
 
 /**
  *

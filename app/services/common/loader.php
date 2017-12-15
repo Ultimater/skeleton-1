@@ -1,6 +1,6 @@
 <?php
 use Phalcon\Di\Service\SharedService;
-use Schmalcon\Loader;
+use Perch\Loader;
 
 return new SharedService(function() {
     $config = $this->getConfig();

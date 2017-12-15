@@ -1,7 +1,7 @@
 <?php
 use Phalcon\Config;
 use Phalcon\Db\Adapter\Pdo\Mysql;
-use Schmalcon\Application\AutoApp\Config as AutoAppConfig;
+use Perch\Application\AutoApp\Config as AutoAppConfig;
 
 return AutoAppConfig::getDefault()
     ->copy()
