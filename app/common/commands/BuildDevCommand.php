@@ -22,7 +22,7 @@ class BuildDevCommand extends Command
     /**
      *
      */
-    public function execute($args)
+    public function execute($input)
     {
         echo "We are preparing such complicated shit for development in: " . self::CLASS . "\n";
 

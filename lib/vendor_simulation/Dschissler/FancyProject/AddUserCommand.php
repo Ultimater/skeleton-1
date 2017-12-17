@@ -35,7 +35,7 @@ class AddUserCommand extends Command
     /**
      *
      */
-    public function execute($args)
+    public function execute($input)
     {
         echo "Run: " . self::CLASS . "\n";
         print_r($args);

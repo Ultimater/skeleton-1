@@ -22,7 +22,7 @@ class IntruderDetectCommand extends Command
     /**
      *
      */
-    public function execute($args)
+    public function execute($input)
     {
         echo "Detecting Intruders: " . self::CLASS . "\n";
     }

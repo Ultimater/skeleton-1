@@ -1,6 +1,6 @@
 {
-    "name": "phalcon/skeleton",
-    "description": "Phalcon Skeleton",
+    "name": "perch/skeleton",
+    "description": "Perch Skeleton",
     "require": {
         "corneltek/getoptionkit": "2.6.0"
     },

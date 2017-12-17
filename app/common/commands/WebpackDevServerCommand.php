@@ -22,7 +22,7 @@ class WebpackDevServerCommand extends Command
     /**
      *
      */
-    public function execute($args)
+    public function execute($input)
     {
         $config = $this->getDI()
             ->getConfig();
