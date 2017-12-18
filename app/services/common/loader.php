@@ -1,12 +1,13 @@
 <?php
 use Phalcon\Di\Service\SharedService;
 use Perch\Loader;
+use Perch\Environment;
 
 return new SharedService(function() {
     $config = $this->getConfig();
 
+    $runmode = Environment::getRunmode();
     $namespace = $config->namespace;
-    $runmode = $config->runmode;
     $path = $config->path;
 
     // NOTE: This will would be automatically done in the Composer autoload.
@@ -23,10 +24,12 @@ return new SharedService(function() {
         $namespace                => $path->libraryDir . 'library',
     ]);
 
-    if (isset($runmode['module'])) {
+    if ($runmode === Environment::WEB_RUNMODE) {
+        $runmodeConfig = $config[Environment::WEB_RUNMODE];
+
         // NOTE: We could do this in our AutoAppLoader delivered via Composer package.
         $modulesArr = [];
-        foreach ($runmode->module as $moduleName) {
+        foreach ($runmodeConfig->module as $moduleName) {
             $modulesArr[$moduleName] = [
                 'className' => $namespace . '\\Modules\\' . ucfirst($moduleName) . '\\Module',
                 'path'      => $path->modulesDir . $moduleName . '/Module.php',

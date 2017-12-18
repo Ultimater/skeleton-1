@@ -1,12 +1,13 @@
 <?php
+use Perch\Environment;
 use Perch\Mvc\Router;
 
 return function() {
     $config = $this->getConfig();
 
-    $runmode = $config->runmode;
+    $runmodeConfig = $config[Environment::WEB_RUNMODE];
 
-    $routeConfig = $runmode->route;
+    $routeConfig = $runmodeConfig->route;
     $defaultModule = $routeConfig->default->module;
 
     $router = new Router();
@@ -22,7 +23,7 @@ return function() {
     if ($isSingleModule) {
         $router->addBasicDefaultRoutes($defaultModule);
     } else {
-        $modules = $runmode->module->toArray();
+        $modules = $runmodeConfig->module->toArray();
         foreach ($modules as $moduleName) {
             $router->addStdModule($moduleName);
         }
