@@ -1,7 +1,11 @@
 ---
 namespace: App
+runmodes:
+  - cli
+  - web
 path:
   appDir: app
   packageDir: lib
+  envDir: env
   tmpDir: tmp
 ...
