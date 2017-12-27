@@ -32,7 +32,7 @@ return new SharedService(function() {
         foreach ($runmodeConfig->module as $moduleName) {
             $modulesArr[$moduleName] = [
                 'className' => $namespace . '\\Modules\\' . ucfirst($moduleName) . '\\Module',
-                'path'      => $path->modulesDir . $moduleName . '/Module.php',
+                'path'      => $path->webmodulesDir . $moduleName . '/Module.php',
             ];
         }
         $loader->registerModules($modulesArr);
