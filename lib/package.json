@@ -4,9 +4,8 @@
   "dependencies": {},
   "devDependencies": {
     "webpack": "3.8.1",
-    "node-libs-browser": "2.0.0",
     "webpack-dev-server": "2.9.3",
-    "perch-framework": "0.1.2"
+    "perch-framework": "0.1.5"
   },
   "scripts": {
     "dev": "NODE_PATH=\"${PACKAGE_DIR}node_modules\" webpack-dev-server --config $APP_DIR/config/webpack.js"
