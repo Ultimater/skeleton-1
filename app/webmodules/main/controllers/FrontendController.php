@@ -6,14 +6,16 @@ use Phalcon\Mvc\Controller;
 /**
  *
  */
-class IndexController extends Controller
+class FrontendController extends Controller
 {
     /**
      *
      */
     public function indexAction()
     {
-        return __METHOD__;
+        $this->view->test = 'abc';
+
+        // return __METHOD__;
     }
 
     /**
@@ -23,4 +25,5 @@ class IndexController extends Controller
     {
         return __METHOD__;
     }
+
 }
