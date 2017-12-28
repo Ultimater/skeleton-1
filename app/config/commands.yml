@@ -5,8 +5,6 @@ alias:
   dev: webpackDevServer
   addUser: dschissler:fancyProject:addUser
 use:
-  - BuildDevCommand
-  - WebpackDevServerCommand
   - Dschissler\FancyProject\AddUserCommand
 bundle:
   - BobFrancisJr\Security\CommandBundle

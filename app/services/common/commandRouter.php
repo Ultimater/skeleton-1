@@ -12,11 +12,13 @@ return new SharedService(function() {
     $cmdConfig = $config->commands;
 
     $router = new Router();
+
     $router->setDI($this);
     if (isset($routeConfig->default['command'])) {
         $router->setDefaultCommand($routeConfig->default->command);
     }
     $router->setDefaultNamespace($cmdConfig->default->namespace);
+    $router->setDefaultDirectory($config->path->appDir . 'common/commands/');
     $router->registerCommands($cmdConfig->use->toArray());
     $router->registerAliases($cmdConfig->alias->toArray());
 
