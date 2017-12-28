@@ -4,7 +4,7 @@
 
 * [Download Caddy](https://caddyserver.com/download) web server and place it into a system path
 * In the project root run
-  * `git clone git@github.com:perch-foundation/feather-extension.git`
+  * `git clone https://github.com/perch-foundation/feather-extension.git`
   * `./perch` (`./env/dev/`)
 * In the `./lib` directory run
   * `composer install`
