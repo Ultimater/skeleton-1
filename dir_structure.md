@@ -60,13 +60,16 @@
         ├── cmd/ (commands extracted from command aliases for direct access)
         │   ├── scheduledTasks (ex; cronjob CLI access to run maintenance and send newsletters)
         │   └── useradd (ex; add a user using a Command supplied by a Composer package)
-        ├── var/
-        │   ├── cache/
-        │   └── logs/
-        └── public/
-            ├── assets/ (symlink to /app/assets/public/)
-            ├── r/ (built resources from Webpack; fonts, images, js and css)
-            └── index.php (entry as "build" environment)
+        ├── public/
+        │   ├── index.php (entry as "build" environment)
+        │   ├── assets/ (symlink to /app/assets/public/)
+        │   ├── /css/
+        │   ├── /images/
+        │   ├── /js/
+        │   └── /fonts/
+        └── var/
+            ├── cache/
+            └── logs/
 ```
 
 # Entry points
