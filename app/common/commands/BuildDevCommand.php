@@ -26,6 +26,6 @@ class BuildDevCommand extends Command
     {
         echo "We are preparing such complicated shit for development in: " . self::CLASS . "\n";
 
-        $this->command('webpackDevServer', []);
+        $this->command('webpack', []);
     }
 }

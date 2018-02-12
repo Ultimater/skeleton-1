@@ -2,11 +2,13 @@
 namespace App\Commands;
 
 use Perch\Command;
+use Perch\Command\ArgParser\Standard as ArgParser;
+use Perch\Command\HelpPrinter\Standard as HelpPrinter;
 
 /**
  *
  */
-class WebpackDevServerCommand extends Command
+class WebpackCommand extends Command
 {
 
     /**
@@ -15,8 +17,15 @@ class WebpackDevServerCommand extends Command
     protected function configure()
     {
         $this
-            ->setShortDescription('Webpack Dev Server')
-            ->setLongDescription('Run the Webpack Dev Server.');
+            ->setShortDescription('Webpack')
+            ->setLongDescription('Run Webpack.')
+            ->setArgHandlers(ArgParser::class, HelpPrinter::class, [
+                'args' => [
+                    'required' => [],
+                    'optional' => ['environment'],
+                ],
+                'opts' => [],
+            ]);
     }
 
     /**
@@ -27,7 +36,19 @@ class WebpackDevServerCommand extends Command
         $config = $this->getDI()
             ->getConfig();
 
-        echo "The Webpack Dev Server is now running in: " . self::CLASS . "\n";
+        $env = $input[0] ?? 'dev';
+
+        switch ($env) {
+            case 'dev':
+                $npmCmd = 'dev';
+                break;
+            case 'staging':
+            case 'build':
+                $npmCmd = 'build';
+                break;
+            default:
+                throw new \Exception('Webpack environment is invalid.');
+        }
 
         $exports = $this->createVariableExports([
             'APP_DIR'     => $config->path->appDir,
@@ -35,7 +56,7 @@ class WebpackDevServerCommand extends Command
         ]);
         $packageDirEsc = escapeshellarg($config->path->packageDir);
 
-        $cmd = "$exports && npm --prefix=$packageDirEsc run dev";
+        $cmd = "$exports && npm --prefix=$packageDirEsc run $npmCmd";
         $ret = passthru($cmd);
     }
 

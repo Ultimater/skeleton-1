@@ -12,7 +12,6 @@ return new SharedService(function() {
     $cmdConfig = $config->commands;
 
     $router = new Router();
-
     $router->setDI($this);
     if (isset($routeConfig->default['command'])) {
         $router->setDefaultCommand($routeConfig->default->command);
