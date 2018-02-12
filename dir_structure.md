@@ -24,7 +24,7 @@
 │   │   ├── entries/
 │   │   ├── commons/
 │   │   └── modules/
-│   ├── library/ (only generic libraries; see phanbook's structure)
+│   ├── library/ (only generic libraries)
 │   ├── modules/
 │   │   └── main/
 │   │       ├── controllers/
@@ -71,17 +71,17 @@
 
 # Entry points
 
-**Development access**  
-`/env/dev/public/index.php` for **web** access to the application  
-`/env/dev/run` for general **CLI** to run commands  
-`/env/dev/cmd/scheduledTasks` for **cronjob** maintenance access  
-`/env/dev/cmd/useradd` for CLI access to run the "useradd" **command** directly  
+**Development access**
+`/env/dev/public/index.php` for **web** access to the application
+`/env/dev/run` for general **CLI** to run commands
+`/env/dev/cmd/scheduledTasks` for **cronjob** maintenance access
+`/env/dev/cmd/useradd` for CLI access to run the "useradd" **command** directly
 
-**Staging or Production access**  
-`/env/build/public/index.php` for **web** access to the application  
-`/env/build/run` for general **CLI** to run commands  
-`/env/build/cmd/scheduledTasks` for **cronjob** maintenance access  
-`/env/build/cmd/useradd` for CLI access to run the "useradd" **command** directly  
+**Staging or Production access**
+`/env/build/public/index.php` for **web** access to the application
+`/env/build/run` for general **CLI** to run commands
+`/env/build/cmd/scheduledTasks` for **cronjob** maintenance access
+`/env/build/cmd/useradd` for CLI access to run the "useradd" **command** directly
 
 # Environment `run` and `cmd/`
 
