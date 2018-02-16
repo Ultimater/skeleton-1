@@ -6,11 +6,11 @@
     "webpack": "4.0.0-beta.1",
     "webpack-cli": "2.0.6",
     "webpack-dev-server": "3.0.0-beta.1",
-    "perch-framework": "0.1.6"
+    "perch-framework": "0.1.7"
   },
   "scripts": {
-    "dev": "NODE_PATH=\"${PACKAGE_DIR}node_modules\" webpack-dev-server --config $APP_DIR/config/webpack.js",
-    "build": "NODE_PATH=\"${PACKAGE_DIR}node_modules\" webpack --config $APP_DIR/config/webpack.js"
+    "dev": "NODE_PATH=\"${PACKAGE_DIR}node_modules\" WEBPACK_MODE=development webpack-dev-server --config $APP_DIR/config/webpack.js",
+    "build": "NODE_PATH=\"${PACKAGE_DIR}node_modules\" WEBPACK_MODE=production webpack --config $APP_DIR/config/webpack.js"
   },
   "engineString": true,
   "engines": {
