@@ -11,6 +11,6 @@
   "scripts": {},
   "engineString": true,
   "engines": {
-    "node": ">=7.0"
+    "node": ">=8.0"
   }
 }
