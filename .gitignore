@@ -1,6 +1,7 @@
 env/
 lib/vendor/
 lib/node_modules/
+lib/package-lock.json
 lib/.npmrc
 tmp/
 feather-extension

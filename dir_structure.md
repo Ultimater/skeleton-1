@@ -4,7 +4,7 @@
 ├── application.yml
 ├── README.md
 ├── docs/
-├── schema/
+├── setup/
 ├── app/
 │   ├── assets/
 │   │   └── public/
@@ -17,6 +17,7 @@
 │   ├── config/
 │   │   ├── cli.yml
 │   │   ├── commands.yml
+│   │   ├── config.php
 │   │   ├── js.yml
 │   │   ├── web.yml
 │   │   └── webpack.js

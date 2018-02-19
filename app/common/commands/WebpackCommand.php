@@ -33,35 +33,32 @@ class WebpackCommand extends Command
      */
     public function execute($input)
     {
+        $env = $input[0] ?? 'dev';
+
         $config = $this->getDI()
             ->getConfig();
 
-        $env = $input[0] ?? 'dev';
+        $appDir = $config->path->appDir;
+        $packageDir = $config->path->packageDir;
+        $nodeModulesDir = $packageDir . 'node_modules/';
 
-        switch ($env) {
-            case 'dev':
-                $npmCmd = 'dev';
-                break;
-            case 'staging':
-            case 'build':
-                $npmCmd = 'build';
-                break;
-            default:
-                throw new \Exception('Webpack environment is invalid.');
-        }
+        $cmdName = $env === 'dev' ? 'webpack-dev-server' : 'webpack';
+        $mode = $env === 'dev' ? 'development' : 'production';
 
         $exports = $this->createVariableExports([
-            'APP_DIR'     => $config->path->appDir,
-            'PACKAGE_DIR' => $config->path->packageDir,
+            'APP_DIR'   => $config->path->appDir,
+            'NODE_PATH' => $nodeModulesDir,
         ]);
-        $packageDirEsc = escapeshellarg($config->path->packageDir);
+        $cmdEsc = escapeshellcmd($nodeModulesDir . '.bin/' . $cmdName);
+        $modeEsc = escapeshellarg($mode);
+        $configEsc = escapeshellarg($appDir . 'config/webpack.js');
 
-        $cmd = "$exports && npm --prefix=$packageDirEsc run $npmCmd";
+        $cmd = "$exports && $cmdEsc --config=$configEsc --mode=$modeEsc";
         $ret = passthru($cmd);
     }
 
     /**
-     *
+     * Make this multi-platform.
      */
     protected function createVariableExports($envArr)
     {
