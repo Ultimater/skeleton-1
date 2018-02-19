@@ -4,6 +4,7 @@ namespace App\Commands;
 use Perch\Command;
 use Perch\Command\ArgParser\Standard as ArgParser;
 use Perch\Command\HelpPrinter\Standard as HelpPrinter;
+use Perch\Environment;
 
 /**
  *
@@ -33,7 +34,7 @@ class WebpackCommand extends Command
      */
     public function execute($input)
     {
-        $env = $input[0] ?? 'dev';
+        $env = $input[0] ?? Environment::DEV;
 
         $config = $this->getDI()
             ->getConfig();
@@ -42,8 +43,8 @@ class WebpackCommand extends Command
         $packageDir = $config->path->packageDir;
         $nodeModulesDir = $packageDir . 'node_modules/';
 
-        $cmdName = $env === 'dev' ? 'webpack-dev-server' : 'webpack';
-        $mode = $env === 'dev' ? 'development' : 'production';
+        $cmdName = $env === Environment::DEV ? 'webpack-dev-server' : 'webpack';
+        $mode = $env === Environment::DEV ? 'development' : 'production';
 
         $exports = $this->createVariableExports([
             'APP_DIR'   => $config->path->appDir,
