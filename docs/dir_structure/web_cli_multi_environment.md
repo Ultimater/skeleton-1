@@ -2,9 +2,12 @@
 
 ```
 ├── application.yml
+├── composer.json
+├── composer.lock
+├── package.json
+├── package-lock.json
 ├── README.md
 ├── docs/
-├── setup/
 ├── app/
 │   ├── assets/
 │   │   └── public/
@@ -32,14 +35,11 @@
 │           ├── models/ (these are models we don't want to share with other modules)
 │           ├── Module.php
 │           └── views/ (these are views specific to this module, not all views should be shared)
+├── setup/
 ├── tests/
 │   ├── composer.json
 │   └── vendor/
-├── composer.json
-├── composer.lock
 ├── vendor/
-├── package.json
-├── package-lock.json
 ├── node_modules/
 └── env/
     ├── dev/

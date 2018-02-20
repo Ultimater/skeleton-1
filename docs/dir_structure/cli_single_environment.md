@@ -4,9 +4,11 @@ Single Enviroment uses the `std` environment.
 
 ```
 ├── application.yml
+├── composer.json
+├── composer.lock
 ├── README.md
+├── run (CLI entry)
 ├── docs/
-├── setup/
 ├── app/
 │   ├── common/
 │   │   ├── commands/
@@ -23,13 +25,11 @@ Single Enviroment uses the `std` environment.
 ├── tests/
 │   ├── composer.json
 │   └── vendor/
-├── composer.json
-├── composer.lock
 ├── vendor/
-├── run (general CLI entry)
 ├── cmd/ (commands extracted from command aliases for direct access)
 │   ├── scheduledTasks
 │   └── useradd
+├── setup/
 └───var/
     └── cache/
 ```

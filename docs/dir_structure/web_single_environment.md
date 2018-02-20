@@ -5,9 +5,10 @@ Single Enviroment uses the `std` environment.  Webpack is not available in the s
 
 ```
 ├── application.yml
+├── composer.json
+├── composer.lock
 ├── README.md
 ├── docs/
-├── setup/
 ├── app/
 │   ├── assets/
 │   │   └── public/
@@ -29,18 +30,17 @@ Single Enviroment uses the `std` environment.  Webpack is not available in the s
 │           ├── models/ (these are models we don't want to share with other modules)
 │           ├── Module.php
 │           └── views/ (these are views specific to this module, not all views should be shared)
-├── tests/
-│   ├── composer.json
-│   └── vendor/
-├── composer.json
-├── composer.lock
-├── vendor/
 ├── public/
 │   ├── assets/ (symlink to /app/assets/public/)
 │   └── index.php (web entry)
-└───var/
-    ├── cache/
-    └── logs/
+├── setup/
+├── tests/
+│   ├── composer.json
+│   └── vendor/
+├───var/
+│    ├── cache/
+│    └── logs/
+└── vendor/
 
 # Entry points
 
