@@ -8,8 +8,6 @@ Single Enviroment uses the `std` environment.
 ├── docs/
 ├── setup/
 ├── app/
-│   ├── assets/
-│   │   └── public/
 │   ├── common/
 │   │   ├── commands/
 │   │   ├── controllers/ (such as controllerBase and errorController)
