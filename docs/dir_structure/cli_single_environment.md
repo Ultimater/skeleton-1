@@ -38,6 +38,6 @@ Single Enviroment uses the `std` environment.
 
 # Entry points
 
-`/run` for general **CLI** to run commands
-`/cmd/scheduledTasks` for **cronjob** maintenance access
-`/cmd/useradd` for CLI access to run the "useradd" **command** directly
+* `/run` for general **CLI** to run commands
+* `/cmd/scheduledTasks` for **cronjob** maintenance access
+* `/cmd/useradd` for CLI access to run the "useradd" **command** directly

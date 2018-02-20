@@ -44,5 +44,5 @@ Single Enviroment uses the `std` environment.  Webpack is not available in the s
 
 # Entry points
 
-`/public/index.php` for **web** access to the application
+* `/public/index.php` for **web** access to the application
 
