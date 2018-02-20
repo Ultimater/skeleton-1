@@ -5,7 +5,6 @@ runmodes:
   - web
 path:
   appDir: app
-  packageDir: lib
   envDir: env
   tmpDir: tmp
 ...

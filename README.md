@@ -66,8 +66,13 @@ service:
 
 ## Notes
 
-The `perch` tool will eventually be a stand alone tool to be used in autoapp projects.  At the moment the `perch` command only generates the `dev` environment in `./env/dev/`.
+* The environment .env files are currently being stored in the skeleton repo.  This is only for early development.
+* The `perch` tool will eventually be a stand alone tool to be used in autoapp projects.  At the moment the `perch` command only generates the `dev` environment in `./env/dev/`.
 
-## See
+## Documentation
 
-* Project Skeleton [directory structure](https://github.com/perch-foundation/skeleton/blob/master/dir_structure.md)
+#### Project Skeleton
+
+* [CLI Single-Environment](https://github.com/perch-foundation/skeleton/blob/master/docs/dir_structure/cli_single_environment.md)
+* [Web and Cli Multi-Environment](https://github.com/perch-foundation/skeleton/blob/master/docs/dir_structure/web_cli_multi_environment.md)
+* [Web Single-Environment](https://github.com/perch-foundation/skeleton/blob/master/docs/dir_structure/web_single_environment.md)

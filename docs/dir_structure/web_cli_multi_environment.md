@@ -1,4 +1,4 @@
-# Directory Structure
+# Directory Structure for Web and Cli Multi-Environment Perch App
 
 ```
 ├── application.yml
@@ -18,31 +18,29 @@
 │   │   ├── cli.yml
 │   │   ├── commands.yml
 │   │   ├── config.php
-│   │   ├── js.yml
 │   │   ├── web.yml
 │   │   └── webpack.js
+│   ├── library/ (only generic libraries)
+│   ├── services/
 │   ├── webpack/
 │   │   ├── entries/
 │   │   ├── commons/
 │   │   └── modules/
-│   ├── library/ (only generic libraries)
-│   ├── modules/
-│   │   └── main/
-│   │       ├── controllers/
-│   │       ├── models/ (these are models we don't want to share with other modules)
-│   │       ├── Module.php
-│   │       └── views/ (these are views specific to this module, not all views should be shared)
-│   └── services/
+│   └── webmodules/
+│       └── main/
+│           ├── controllers/
+│           ├── models/ (these are models we don't want to share with other modules)
+│           ├── Module.php
+│           └── views/ (these are views specific to this module, not all views should be shared)
 ├── tests/
 │   ├── composer.json
 │   └── vendor/
-├── lib (third party packages)
-│   ├── composer.json
-│   ├── composer.lock
-│   ├── vendor/
-│   ├── package.json
-│   ├── package-lock.json
-│   └── node_modules/
+├── composer.json
+├── composer.lock
+├── vendor/
+├── package.json
+├── package-lock.json
+├── node_modules/
 └── env/
     ├── dev/
     │   ├── run (general CLI entry as "development" environment using full command names or aliases)
