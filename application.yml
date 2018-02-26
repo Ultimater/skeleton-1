@@ -1,8 +1,7 @@
 ---
 namespace: App
-runmodes:
-  - cli
-  - web
+web: true
+cli: true
 path:
   appDir: app
   envDir: env

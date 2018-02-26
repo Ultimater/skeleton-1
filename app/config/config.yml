@@ -1,0 +1,11 @@
+---
+path:
+  extraDir: /merged/extra/dir/
+database:
+  adapter: Phalcon\Db\Adapter\Pdo\Mysql
+  host: localhost
+  username: root
+  password: ""
+  dbname: ""
+  charset: "utf8"
+...
