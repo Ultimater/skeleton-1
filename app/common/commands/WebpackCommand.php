@@ -34,7 +34,7 @@ class WebpackCommand extends Command
      */
     public function execute($input)
     {
-        $env = $input[0] ?? Environment::DEV;
+        $env = $input[0] ?? Environment::DEVELOPMENT;
 
         $config = $this->getDI()
             ->getConfig();
@@ -43,8 +43,8 @@ class WebpackCommand extends Command
         $packageDir = $config->path->packageDir;
         $nodeModulesDir = $packageDir . 'node_modules/';
 
-        $cmdName = $env === Environment::DEV ? 'webpack-dev-server' : 'webpack';
-        $mode = $env === Environment::DEV ? 'development' : 'production';
+        $cmdName = $env === Environment::DEVELOPMENT ? 'webpack-dev-server' : 'webpack';
+        $mode = $env === Environment::DEVELOPMENT ? 'development' : 'production';
 
         $exports = $this->createVariableExports([
             'APP_DIR'   => $config->path->appDir,
