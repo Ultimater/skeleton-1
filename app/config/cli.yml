@@ -1,7 +1,7 @@
 ---
 route:
   default:
-    command: dev
+    command: status
 service:
   preset: Perch\Di\Preset\Cli
   dir:

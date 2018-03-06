@@ -2,7 +2,6 @@
 default:
   namespace: App\Commands
 alias:
-  dev: webpack
   addUser: dschissler:fancyProject:addUser
 use:
   - Dschissler\FancyProject\AddUserCommand
