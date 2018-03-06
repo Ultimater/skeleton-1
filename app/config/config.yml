@@ -4,8 +4,8 @@ path:
 database:
   adapter: Phalcon\Db\Adapter\Pdo\Mysql
   host: localhost
-  username: root
-  password: ""
+  username: "{{MYSQL_USER_NAME}}"
+  password: "{{MYSQL_PASSWORD}}"
   dbname: ""
   charset: "utf8"
 ...

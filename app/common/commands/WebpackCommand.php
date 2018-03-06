@@ -23,50 +23,44 @@ class WebpackCommand extends Command
             ->setArgHandlers(ArgParser::class, HelpPrinter::class, [
                 'args' => [
                     'required' => [],
-                    'optional' => ['environment'],
+                    'optional' => [],
                 ],
-                'opts' => [],
+                'opts' => [
+                    'e|environment?' => 'Environment to use (default is dev).',
+                ],
             ]);
     }
 
     /**
      *
      */
-    public function execute($input)
+    public function execute(array $input)
     {
-        $env = $input[0] ?? Environment::DEVELOPMENT;
+        $opts = $input['opts'];
+        $environment = $opts['environment'] ?? Environment::DEVELOPMENT;
+
+        if (!Environment::isValidEnvironment($environment)) {
+            throw new \Exception('Invalid environment.');
+        }
 
         $config = $this->getDI()
             ->getConfig();
 
-        $appDir = $config->path->appDir;
+        $configDir = $config->path->configDir;
         $packageDir = $config->path->packageDir;
         $nodeModulesDir = $packageDir . 'node_modules/';
 
-        $cmdName = $env === Environment::DEVELOPMENT ? 'webpack-dev-server' : 'webpack';
-        $mode = $env === Environment::DEVELOPMENT ? 'development' : 'production';
+        $cmdName = $environment === Environment::DEVELOPMENT ? 'webpack-dev-server' : 'webpack';
+        $mode = $environment === Environment::DEVELOPMENT ? 'development' : 'production';
 
         $exports = $this->createVariableExports([
-            'APP_DIR'   => $config->path->appDir,
             'NODE_PATH' => $nodeModulesDir,
         ]);
         $cmdEsc = escapeshellcmd($nodeModulesDir . '.bin/' . $cmdName);
         $modeEsc = escapeshellarg($mode);
-        $configEsc = escapeshellarg($appDir . 'config/webpack.js');
+        $configEsc = escapeshellarg($configDir . 'webpack.js');
 
         $cmd = "$exports && $cmdEsc --config=$configEsc --mode=$modeEsc";
         $ret = passthru($cmd);
-    }
-
-    /**
-     * Make this multi-platform.
-     */
-    protected function createVariableExports($envArr)
-    {
-        $exportArr = [];
-        foreach ($envArr as $name => $value) {
-            $exportArr[] = "export $name=" . escapeshellarg($value);
-        }
-        return implode (' ', $exportArr);
     }
 }
