@@ -1,11 +1,11 @@
 <?php
-use Perch\Environment;
+use Perch\Environment\Runmode;
 use Perch\Mvc\Router;
 
 return function() {
     $config = $this->getConfig();
 
-    $runmodeConfig = $config[Environment::WEB_RUNMODE];
+    $runmodeConfig = $config[Runmode::WEB];
 
     $routeConfig = $runmodeConfig->route;
     $defaultModule = $routeConfig->default->module;

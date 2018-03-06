@@ -53,7 +53,7 @@ class WebpackCommand extends Command
         $cmdName = $environment === Environment::DEVELOPMENT ? 'webpack-dev-server' : 'webpack';
         $mode = $environment === Environment::DEVELOPMENT ? 'development' : 'production';
 
-        $exports = $this->createVariableExports([
+        $exports = $this->createVariableExports($config, [
             'NODE_PATH' => $nodeModulesDir,
         ]);
         $cmdEsc = escapeshellcmd($nodeModulesDir . '.bin/' . $cmdName);
