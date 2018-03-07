@@ -1,9 +1,10 @@
----
-namespace: App
-web: true
-cli: true
-path:
-  appDir: app
-  envDir: env
-  tmpDir: tmp
-...
+{
+  "namespace": "App",
+  "web": true,
+  "cli": true,
+  "path": {
+    "appDir": "app",
+    "envDir": "env",
+    "tmpDir": "tmp"
+  }
+}

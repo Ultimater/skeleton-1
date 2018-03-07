@@ -3,7 +3,7 @@
 Single Enviroment uses the `std` environment.
 
 ```
-├── application.yml
+├── application.json
 ├── composer.json
 ├── composer.lock
 ├── README.md
@@ -17,8 +17,8 @@ Single Enviroment uses the `std` environment.
 │   │   ├── plugins/
 │   │   └── views/
 │   ├── config/
-│   │   ├── cli.yml
-│   │   ├── commands.yml
+│   │   ├── cli.json
+│   │   ├── commands.json
 │   │   └── config.php
 │   ├── library/ (only generic libraries)
 │   └── services/

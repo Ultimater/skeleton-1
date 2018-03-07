@@ -1,7 +1,7 @@
 # Directory Structure for Web and Cli Multi-Environment Perch App
 
 ```
-├── application.yml
+├── application.json
 ├── composer.json
 ├── composer.lock
 ├── package.json
@@ -18,10 +18,10 @@
 │   │   ├── plugins/
 │   │   └── views/
 │   ├── config/
-│   │   ├── cli.yml
-│   │   ├── commands.yml
+│   │   ├── cli.json
+│   │   ├── commands.json
 │   │   ├── config.php
-│   │   ├── web.yml
+│   │   ├── web.json
 │   │   └── webpack.js
 │   ├── library/ (only generic libraries)
 │   ├── services/
@@ -87,4 +87,4 @@
 
 # Environment `run` and `cmd/`
 
-If a project has a CLI mode then it will have a `./run` PHP executable script that can print out a listing of commands, give help on a specific command or run all commands using its long name or a short name defined as an alias in the projects `application.yml`.  The environments `cmd/` directory will have entries which run specific commands and the `perch` tool will populate this directory from the command aliases and also notifying if a hard wired command no longer exists as an alias.  The names of the files will be the command alias.  The `.php` extension will not be used by default.
+If a project has a CLI mode then it will have a `./run` PHP executable script that can print out a listing of commands, give help on a specific command or run all commands using its long name or a short name defined as an alias in the projects `application.json`.  The environments `cmd/` directory will have entries which run specific commands and the `perch` tool will populate this directory from the command aliases and also notifying if a hard wired command no longer exists as an alias.  The names of the files will be the command alias.  The `.php` extension will not be used by default.

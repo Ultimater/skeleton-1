@@ -4,7 +4,7 @@ Single Enviroment uses the `std` environment.  Webpack is not available in the s
 
 
 ```
-├── application.yml
+├── application.json
 ├── composer.json
 ├── composer.lock
 ├── README.md
@@ -19,9 +19,9 @@ Single Enviroment uses the `std` environment.  Webpack is not available in the s
 │   │   ├── plugins/
 │   │   └── views/
 │   ├── config/
-│   │   ├── commands.yml
+│   │   ├── commands.json
 │   │   ├── config.php
-│   │   └── web.yml
+│   │   └── web.json
 │   ├── library/ (only generic libraries)
 │   ├── services/
 │   └── webmodules/

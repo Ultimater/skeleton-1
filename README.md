@@ -36,7 +36,7 @@ Services are located in `./app/services/`.  AutoApp supports two methods for def
   * closure
   * `Phalcon\Di\Service` object.
 
-Additionally a `.yml` or `.ini` file can be used for services.  These formats follow the existing static service definition format.
+Additionally a `.json` or `.ini` file can be used for services.  These formats follow the existing static service definition format.
 
 By default services are defined as not shared.  Phalcon AutoApp has two methods for specifying that a service should be shared.
 
@@ -50,19 +50,23 @@ Phalcon 4 will improve upon the Factory Default DIs by offering DI Presets.  The
 
 ### Putting it all together in the runmode file.
 
-The services are included via the runmode files, ex; `./app/config/web.yml` and `./app/config/cli.yml`.  It should be self-explanatory.
+The services are included via the runmode files, ex; `./app/config/web.json` and `./app/config/cli.json`.  It should be self-explanatory.
 
 Great!  So now we have something that our tooling will understand ;)
 
-```yaml
-service:
-  preset: Perch\Di\Preset\Web
-  provider:
-    - WebServiceProvider
-  dir:
-    - common
-    - web
-```
+```json
+{
+  "service": {
+    "preset": "Perch\\Di\\Preset\\Web",
+    "provider": [
+      "WebServiceProvider"
+    ],
+    "dir": [
+      "common",
+      "web"
+    ]
+  }
+}```
 
 ## Notes
 
