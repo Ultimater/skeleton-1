@@ -5,14 +5,14 @@
 * [Download Caddy](https://caddyserver.com/download) web server and place it into a system path
 * In the project root run
   * `git clone https://github.com/perch-foundation/feather-extension.git`
-  * `./perch` (`./env/dev/`)
-* In the `./lib` directory run
+  * `perch createEnvironment` (creates environment files)
+* In the project room run
   * `composer install`
   * `npm install` (optional)
 * Add `perch-app` to your hosts file and point it to the VM.
 
 ## Now Start the Caddy Webserver.
-* In the project root run `caddy`.  This reads the Caddyfile and serves at http://perch-app:8080.
+* In the project root run `perch caddy`.  This reads the Caddyfile and serves at http://perch-app:8080.
 
 ## Usage
 
@@ -20,10 +20,11 @@
 * Visit http://perch-app:8080 for MVC
 
 ### CLI
-  * Run `./env/dev/run` for CLI
+  * `./env/dev/run` for general CLI access.
   * Run aliased commands at;
     * `./env/dev/cmd/addUser`
-    * `./env/dev/cmd/dev` (same as run, since run is the default.)
+  * `perch caddy` to run Caddy Webserver through Perch tool
+  * `perch webpack` to run webpack-dev-server through Perch tool.
 
 ## Services Documentation
 
