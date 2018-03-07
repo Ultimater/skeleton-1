@@ -1,4 +1,0 @@
----
-className: Phalcon\Http\Response
-shared: true
-...

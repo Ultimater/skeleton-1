@@ -1,0 +1,14 @@
+{
+  "default": {
+    "namespace": "App\\Commands"
+  },
+  "alias": {
+    "addUser": "dschissler:fancyProject:addUser"
+  },
+  "use": [
+    "Dschissler\\FancyProject\\AddUserCommand"
+  ],
+  "bundle": [
+    "BobFrancisJr\\Security\\CommandBundle"
+  ]
+}

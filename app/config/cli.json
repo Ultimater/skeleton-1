@@ -1,0 +1,14 @@
+{
+  "route": {
+    "default": {
+      "command": "status"
+     }
+  },
+  "service": {
+    "preset": "Perch\\Di\\Preset\\Cli",
+    "dir": [
+      "common",
+      "cli"
+    ]
+  }
+}
