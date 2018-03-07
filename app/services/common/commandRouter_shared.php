@@ -1,9 +1,8 @@
 <?php
-use Phalcon\Di\Service\SharedService;
 use Perch\Command\Router;
 use Perch\Environment\Runmode;
 
-return new SharedService(function() {
+return function() {
     $config = $this->getConfig();
 
     $runmodeConfig = $config[Runmode::get()];
@@ -22,4 +21,4 @@ return new SharedService(function() {
     $router->registerAliases($cmdConfig->alias->toArray());
 
     return $router;
-});
+};

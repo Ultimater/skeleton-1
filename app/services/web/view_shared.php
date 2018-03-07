@@ -1,8 +1,7 @@
 <?php
 use Phalcon\Mvc\View;
-use Phalcon\Di\Service\SharedService;
 
-return new SharedService(function() {
+return function() {
     $config = $this->getConfig();
     $router = $this->getRouter();
 
@@ -19,4 +18,4 @@ return new SharedService(function() {
     ]);
 
     return $view;
-});
+};

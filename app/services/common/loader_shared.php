@@ -1,9 +1,8 @@
 <?php
-use Phalcon\Di\Service\SharedService;
 use Perch\Loader;
 use Perch\Environment\Runmode;
 
-return new SharedService(function() {
+return function() {
     $config = $this->getConfig();
 
     $runmode = Runmode::get();
@@ -41,4 +40,4 @@ return new SharedService(function() {
     $loader->register();
 
     return $loader;
-});
+};
