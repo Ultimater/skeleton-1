@@ -26,7 +26,7 @@ return function() {
     if ($runmode === Runmode::WEB) {
         $runmodeConfig = $config[Runmode::WEB];
 
-        // NOTE: We could do this in our AutoAppLoader delivered via Composer package.
+        // NOTE: We could do this in our Bootstrap loader delivered via Composer package.
         $modulesArr = [];
         foreach ($runmodeConfig->module as $moduleName) {
             $modulesArr[$moduleName] = [

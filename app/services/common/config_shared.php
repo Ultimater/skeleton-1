@@ -1,6 +1,6 @@
 <?php
-use Perch\Application\AutoApp;
+use Perch\Bootstrap;
 
 return function() {
-    return AutoApp::getConfig();
+    return Bootstrap::getConfig();
 };
