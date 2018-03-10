@@ -10,12 +10,10 @@
   },
   "service": {
      "preset": "Perch\\Di\\Preset\\Web",
-     "provider": [
-        "WebServiceProvider"
-     ],
-     "dir": [
-        "common",
-        "web"
+     "register": [
+       "WebServiceProvider",
+       "common/",
+       "web/"
      ]
   },
   "webpack": {

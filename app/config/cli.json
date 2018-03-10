@@ -6,9 +6,9 @@
   },
   "service": {
     "preset": "Perch\\Di\\Preset\\Cli",
-    "dir": [
-      "common",
-      "cli"
+    "register": [
+      "common/",
+      "cli/"
     ]
   }
 }
