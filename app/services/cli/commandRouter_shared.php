@@ -5,20 +5,19 @@ use Perch\Environment\Runmode;
 return function() {
     $config = $this->getConfig();
 
+    $namespace = $config->namespace;
     $runmodeConfig = $config[Runmode::get()];
     $routeConfig = $runmodeConfig->route;
-
-    $cmdConfig = $config->commands;
+    $commandConfig = $runmodeConfig->command;
 
     $router = new Router();
     $router->setDI($this);
-    if (isset($routeConfig->default['command'])) {
-        $router->setDefaultCommand($routeConfig->default->command);
-    }
-    $router->setDefaultNamespace($cmdConfig->default->namespace);
+
+    $router->setDefaultCommand($routeConfig->default->command);
+    $router->setDefaultNamespace($namespace . '\\Commands');
     $router->setDefaultDirectory($config->path->appDir . 'commands/');
-    $router->registerCommands($cmdConfig->use->toArray());
-    $router->registerAliases($cmdConfig->alias->toArray());
+    $router->registerCommands($commandConfig->use->toArray());
+    $router->registerAliases($commandConfig->alias->toArray());
 
     return $router;
 };
