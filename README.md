@@ -5,7 +5,7 @@
 * [Download Caddy](https://caddyserver.com/download) web server and place it into a system path
 * In the project root run
   * `git clone https://github.com/perch-foundation/feather-extension.git`
-  * `perch createEnvironment` (creates environment files)
+  * `perch createEnvironment` (creates environment entries)
 * In the project room run
   * `composer install`
   * `npm install` (optional)
@@ -39,11 +39,7 @@ Services are located in `./app/services/`.  AutoApp supports two methods for def
 
 Additionally a `.json` or `.ini` file can be used for services.  These formats follow the existing static service definition format.
 
-By default services are defined as not shared.  Phalcon AutoApp has two methods for specifying that a service should be shared.
-
-* return a `Service` with the second argument as `true` or return the new `Phalcon\Di\Service\SharedService`.  It simply inherits from `Phalcon\Di\Service` and sets it to shared without needing to use a second argument.
-
-* By using framework convention to set the name of the file to be postfixed with `_shared`.  This will force the service to be shared.  If it was already being returned as shared in code then this will cause no harm.
+* By using framework convention to set the name of the file to be postfixed with `_shared`.  This will force the service to be shared.  If it was already being returned as shared in code then this will have no effect.
 
 ### Service Presets
 
@@ -59,21 +55,13 @@ Great!  So now we have something that our tooling will understand ;)
 {
   "service": {
     "preset": "Perch\\Di\\Preset\\Web",
-    "provider": [
+    "register": [
       "WebServiceProvider"
-    ],
-    "dir": [
       "common",
       "web"
-    ]
   }
 }
 ```
-
-## Notes
-
-* The environment .env files are currently being stored in the skeleton repo.  This is only for early development.
-* The `perch` tool will eventually be a stand alone tool to be used in autoapp projects.  At the moment the `perch` command only generates the `dev` environment in `./env/dev/`.
 
 ## Documentation
 
