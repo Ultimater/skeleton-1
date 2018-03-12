@@ -18,7 +18,7 @@ return function() {
 
     $loader = new Loader();
     $loader->registerNamespaces([
-        $namespace . '\\Commands' => $path->commonDir . 'commands',
+        $namespace . '\\Commands' => $path->appDir . 'commands',
         $namespace . '\\Models'   => $path->commonDir . '/models',
         $namespace                => $path->libraryDir . 'library',
     ]);
