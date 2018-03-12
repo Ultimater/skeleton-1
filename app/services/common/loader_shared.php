@@ -5,7 +5,6 @@ use Perch\Environment\Runmode;
 return function() {
     $config = $this->getConfig();
 
-    $runmode = Runmode::get();
     $namespace = $config->namespace;
     $path = $config->path;
 
