@@ -1,6 +1,6 @@
 <?php
-use Perch\Loader;
 use Perch\Environment\Runmode;
+use Phalcon\Loader;
 
 return function() {
     $config = $this->getConfig();
