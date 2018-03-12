@@ -23,20 +23,6 @@ return function() {
         $namespace                => $path->libraryDir . 'library',
     ]);
 
-    if ($runmode === Runmode::WEB) {
-        $runmodeConfig = $config[Runmode::WEB];
-
-        // NOTE: We could do this in our Bootstrap loader.
-        $modulesArr = [];
-        foreach ($runmodeConfig->module as $moduleName) {
-            $modulesArr[$moduleName] = [
-                'className' => $namespace . '\\Modules\\' . ucfirst($moduleName) . '\\Module',
-                'path'      => $path->webmodulesDir . $moduleName . '/Module.php',
-            ];
-        }
-        $loader->registerModules($modulesArr);
-    }
-
     $loader->register();
 
     return $loader;
