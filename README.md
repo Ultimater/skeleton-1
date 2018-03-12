@@ -60,6 +60,7 @@ Great!  So now we have something that our tooling will understand ;)
       "common",
       "web"
     ]
+  }
 }
 ```
 
