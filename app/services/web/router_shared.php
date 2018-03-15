@@ -9,16 +9,16 @@ return function() {
 
     $routeConfig = $runmodeConfig->route;
     $defaultModule = $routeConfig->default->module;
+    $isSingleModule = $routeConfig['singleModule'] ?? false;
 
     $router = new Router();
     $router->removeExtraSlashes(true);
     $router->setDefaultModule($defaultModule);
 
-    $isSingleModule = $routeConfig['singleModule'] ?? false;
     if ($isSingleModule) {
         $router->addBasicDefaultRoutes($defaultModule);
     } else {
-        $modules = $runmodeConfig->module->toArray();
+        $modules = $routeConfig->module->toArray();
         foreach ($modules as $moduleName) {
             $router->addStdModule($moduleName);
         }
