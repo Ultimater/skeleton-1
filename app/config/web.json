@@ -21,7 +21,7 @@
       "HELLO_WORLD_CONSTANT": "Hello World"
      },
     "devServer": {
-      "port": 8081
+      "port": "{{WEBPACK_DEV_SERVER_PORT}}"
     },
     "browsers": [
       "last 5 Chrome versions",

@@ -1,7 +1,5 @@
 {
   "namespace": "App",
-  "web": true,
-  "cli": true,
   "path": {
     "appDir": "app",
     "envDir": "env",

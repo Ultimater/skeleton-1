@@ -5,7 +5,7 @@
   "database": {
     "adapter": "Phalcon\\Db\\Adapter\\Pdo\\Mysql",
     "host": "localhost",
-    "username": "{{MYSQL_USER_NAME}}",
+    "username": "{{MYSQL_USER}}",
     "password": "{{MYSQL_PASSWORD}}",
     "dbname": "",
     "charset": "utf8"
