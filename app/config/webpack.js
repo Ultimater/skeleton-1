@@ -1,14 +1,43 @@
-const webpackConfig = require('perch-framework')
+const {createEntryMap, createConstants, devServer} = require('perch-framework')
 
-const {APP_DIR, TMP_DIR, NODE_PATH} = process.env
+// All five core paths and the target environment are automatically exported.
+const {ROOT_DIR, APP_DIR, PACKAGE_DIR, ENV_DIR, TMP_DIR, ENV} = process.env
+
+// All user defined variables are automatically exported from files ".env" and ".env.dev".
+const {YOUR_VARIABLE} = process.env
+
+// Setup necessary paths.
+const webpackRootDir = `${APP_DIR}/webpack/`
+const modulesDir = `${APP_DIR}webpack/modules/`
+const vendorModulesDir = `${PACKAGE_DIR}node_modules/`
+const assetDir = `${APP_DIR}/assets`
+const tmpDir = `${TMP_DIR}/webpack`
+
+// Get the webpack section of the dev config.
+const config = require(`${APP_DIR}config/dev`).webpack
 
 /**
  *
  */
-module.exports = webpackConfig({
-  configDir: `${APP_DIR}config/`,
-  webpackDir: `${APP_DIR}webpack/`,
-  tmpDir: TMP_DIR,
-  nodeModulesDir: NODE_PATH,
-})
+module.exports = {
+  context: webpackRootDir,
+  entry: createEntryMap(webpackRootDir),
+  output: {
+    path         : '/TODO',
+    publicPath   : 'js/',
+  },
+  resolve: {
+    modules: [
+      modulesDir,
+      vendorModulesDir,
+    ],
+    extensions: [
+      '.js',
+    ],
+  },
+  devServer: devServer({}),
+  plugins: [
+    createConstants(ENV, PACKAGE_DIR, config.constants),
+  ],
+}
 

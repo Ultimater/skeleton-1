@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "dependencies": {},
   "devDependencies": {
-    "webpack": "4.1.0",
-    "webpack-cli": "2.0.10",
-    "webpack-dev-server": "3.1.0",
+    "webpack": "4.1.1",
+    "webpack-cli": "2.0.12",
+    "webpack-dev-server": "3.1.1",
     "perch-framework": "0.1.11"
   },
   "scripts": {},
