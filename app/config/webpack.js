@@ -3,7 +3,7 @@ const {createEntryMap, createConstants, devServer} = require('perch-framework')
 // All five core paths and the target environment are automatically exported.
 const {ROOT_DIR, APP_DIR, PACKAGE_DIR, ENV_DIR, TMP_DIR, ENV} = process.env
 
-// All user defined variables are automatically exported from files ".env" and ".env.dev".
+// All user defined variables are automatically exported from files ".env" and ".env.ENV".
 const {YOUR_VARIABLE} = process.env
 
 // Setup necessary paths.
