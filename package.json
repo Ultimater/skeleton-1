@@ -6,7 +6,7 @@
     "webpack": "4.1.1",
     "webpack-cli": "2.0.12",
     "webpack-dev-server": "3.1.1",
-    "perch-framework": "0.1.13"
+    "perch-framework": "0.1.14"
   },
   "scripts": {},
   "engineString": true,

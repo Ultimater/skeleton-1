@@ -1,4 +1,4 @@
-const {createEntryMap, createConstants, devServer} = require('perch-framework')
+const {createEntryMap, createConstants, devServer, getAppConfig} = require('perch-framework')
 
 // All five core paths and the target environment are automatically exported.
 const {ROOT_DIR, APP_DIR, PACKAGE_DIR, ENV_DIR, TMP_DIR, ENV} = process.env
