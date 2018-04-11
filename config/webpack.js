@@ -1,7 +1,7 @@
 const {createEntryMap, createConstants, devServer, getAppConfig} = require('perch-framework')
 
 // All five core paths and the target environment are automatically exported.
-const {ROOT_DIR, APP_DIR, CONFIG_DIR, PACKAGE_DIR, ENV_DIR, TMP_DIR, ENV} = process.env
+const {ROOT_DIR, APP_DIR, CONFIG_DIR, TMP_DIR, ENV_DIR, ENV} = process.env
 
 // All user defined variables are automatically exported from files ".env" and ".env.ENV".
 const {YOUR_VARIABLE} = process.env
@@ -9,8 +9,8 @@ const {YOUR_VARIABLE} = process.env
 // Setup necessary paths.
 const webpackRootDir = `${APP_DIR}/webpack/`
 const modulesDir = `${APP_DIR}webpack/modules/`
-const vendorModulesDir = `${PACKAGE_DIR}node_modules/`
 const assetDir = `${APP_DIR}/assets`
+const nodeModulesDir = `${ROOT_DIR}node_modules/`
 const tmpDir = `${TMP_DIR}/webpack`
 
 // Get the webpack section of the dev config.
@@ -29,15 +29,24 @@ module.exports = {
   resolve: {
     modules: [
       modulesDir,
-      vendorModulesDir,
+      nodeModulesDir,
     ],
     extensions: [
       '.js',
     ],
   },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
+    ],
+  },
   devServer: devServer({}),
   plugins: [
-    createConstants(ENV, PACKAGE_DIR, config.constants),
+    createConstants(ENV, ROOT_DIR, config.constants),
   ],
 }
 
