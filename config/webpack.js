@@ -33,6 +33,7 @@ module.exports = {
     ],
     extensions: [
       '.js',
+      '.css',
     ],
   },
   module: {
@@ -41,6 +42,24 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+          },
+        ],
       },
     ],
   },

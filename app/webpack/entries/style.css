@@ -1,0 +1,9 @@
+
+:root {
+  --submarine-color: yellow;
+}
+
+
+body {
+  background-color: var(--submarine-color);
+}

@@ -1,5 +1,6 @@
 
 import framework from 'commons/libframework'
+import './style'
 
 console.log('start')
 
