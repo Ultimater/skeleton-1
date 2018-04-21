@@ -2,7 +2,7 @@
   "name": "phalcon-skeleton",
   "version": "0.1.0",
   "dependencies": {
-    "perch-framework": "0.1.14"
+    "perch-core": "0.1.14"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
