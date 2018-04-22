@@ -1,7 +1,0 @@
-{
-  "webpack": {
-    "constants": {
-      "HELLO_WORLD_CONSTANT": "Hello World"
-     }
-  }
-}
