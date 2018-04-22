@@ -11,7 +11,11 @@ Single Enviroment uses the `std` environment.  Webpack is not available in the s
 ├── docs/
 ├── app/
 │   ├── assets/
-│   │   └── public/
+│   │   └── public/ (for direct old-school access)
+│   │       ├── fonts/
+│   │       ├── js/
+│   │       ├── res/
+│   │       └── style/
 │   ├── common/
 │   │   ├── commands/
 │   │   ├── controllers/ (such as controllerBase and errorController)

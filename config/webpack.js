@@ -19,6 +19,7 @@ module.exports = {
   resolve: {
     modules: [
       modulesDir,
+      assetDir,
       vendorModulesDir,
     ],
     extensions: [
@@ -38,12 +39,7 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-            },
-          },
+          'css-loader?importLoaders=1',
           'postcss-loader',
         ],
       },

@@ -10,7 +10,13 @@
 ├── docs/
 ├── app/
 │   ├── assets/
-│   │   └── public/
+│   │   ├── res/
+│   │   ├── theme/
+│   │   └── public/ (for direct old-school access)
+│   │       ├── fonts/
+│   │       ├── js/
+│   │       ├── res/
+│   │       └── style/
 │   ├── common/
 │   │   ├── commands/
 │   │   ├── controllers/ (such as controllerBase and errorController)

@@ -2,7 +2,7 @@
   "name": "phalcon-skeleton",
   "version": "0.1.0",
   "dependencies": {
-    "@perch-framework/core": "0.1.19"
+    "@perch-framework/core": "0.1.20"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -11,6 +11,7 @@
     "babel-preset-stage-3": "^6.24.1",
     "css-loader": "^0.28.11",
     "postcss": "^6.0.21",
+    "postcss-import": "^11.1.0",
     "postcss-loader": "^2.1.4",
     "postcss-preset-env": "^4.0.0",
     "style-loader": "^0.21.0",
@@ -40,7 +41,8 @@
     "plugins": {
       "postcss-preset-env": {
         "stage": 3
-      }
+      },
+      "postcss-import": {}
     }
   },
   "private": true,
