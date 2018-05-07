@@ -2,15 +2,14 @@
   "route": {
     "default": {
       "command": "status"
-     }
+    }
   },
-  "service": {
-    "preset": "Perch\\Di\\Preset\\Cli",
-    "register": [
-      "common/",
-      "cli/"
-    ]
-  },
+  "service": [
+    "Perch\\Di\\Preset\\Cli",
+    "./CliServiceProvider",
+    "./common/",
+    "./cli/"
+  ],
   "command": {
     "alias": {
       "addUser": "dschissler:fancyProject:addUser"

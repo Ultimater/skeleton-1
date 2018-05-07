@@ -8,14 +8,12 @@
       "module": "main"
     }
   },
-  "service": {
-    "preset": "Perch\\Di\\Preset\\Web",
-    "register": [
-      "WebServiceProvider",
-      "common/",
-      "web/"
-    ]
-  },
+  "service": [
+    "Perch\\Di\\Preset\\Web",
+    "./WebServiceProvider",
+    "./common/",
+    "./web/"
+  ],
   "webpack": {
     "constants": {
       "HELLO_WORLD_CONSTANT": "Hello World"
